@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from util import constants
+import requests
 
 
 class Functions:
@@ -34,3 +35,9 @@ class Functions:
         for child in children:
             if 'active' in child.get_attribute('class'):
                 return children.index(child)
+
+    @staticmethod
+    def get_all_posts_from_unique_id(post_type, id_code):
+        url = {'posts': 'http://jsonplaceholder.typicode.com/posts?userId={0}'.format(id_code),
+               'comments': 'http://jsonplaceholder.typicode.com/comments?postId={0}'.format(id_code)}
+        return requests.get(url[post_type]).content
