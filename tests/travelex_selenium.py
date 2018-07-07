@@ -1,6 +1,6 @@
 from util import constants, common_func
-import unittest
 from time import sleep
+import unittest
 
 
 class Tests(unittest.TestCase):
@@ -24,7 +24,15 @@ class Tests(unittest.TestCase):
         self.driver.set_window_size(550, 550)
         self.assertTrue(self.driver.find_element_by_xpath(self.elements['slider']), 'Element not found.')
 
-    # TODO: Slide left twice and check if third item is displayed
+    def test_04_check_third_item(self):
+        self.driver.set_window_size(550, 550)
+        self.driver.implicitly_wait(10)
+        for _ in range(0, 2):
+            self.functions.slide_card_travelex(self.driver, self.elements['slider'])
+            sleep(0.5)
+        find_active_dot = self.functions.find_active_dot_travelex(self.driver, self.elements['dots'],
+                                                                  self.elements['dot_item'])
+        self.assertEqual(find_active_dot, 2, 'Active card (0 - 3): ' + str(find_active_dot))
 
 
 if __name__ == '__main__':

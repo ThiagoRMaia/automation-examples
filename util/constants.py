@@ -13,6 +13,8 @@ WIKIPEDIA_ELEMENTS = {'website': 'http://www.wikipedia.org',
 TRAVELEX_ELEMENTS = {'website': 'https://www.travelex.co.uk/',
                      'cards': "//*[@class='matchHeights matchTitleHeights simple__animation simple__animation_animate clearfix']",  # xpath
                      'slider':  "//*[@class='matchHeights matchTitleHeights simple__animation simple__animation_animate clearfix slick-initialized slick-slider']",  # xpath
+                     'dots': 'slick-dots',  # class
+                     'dot_item': 'li'  # tag
                      }
 
 PATHS = {'chromedriver': str(Path().absolute().parent) + r'\artifacts\chromedriver.exe'
