@@ -1,6 +1,10 @@
-from util import constants, common_func
-from time import sleep
+import sys
+import os
 import unittest
+from time import sleep
+
+sys.path.append(os.path.dirname(__file__) + '..')
+from util import constants, common_func
 
 
 class Tests(unittest.TestCase):

@@ -1,5 +1,9 @@
-from util import constants, common_func
+import sys
+import os
 import unittest
+
+sys.path.append(os.path.dirname(__file__) + '..')
+from util import constants, common_func
 
 
 class Tests(unittest.TestCase):
