@@ -10,5 +10,25 @@ This project was created as an effort to exemplify selenium-based test automatio
 
 ## Running the scripts
 1. Open a cmd and type in: **cd <path_to_project>/tests**
-2. To run the tests eihter use: **python wikipedia_selenium.py** or: **python travelex_selenium.py**
+2. To run the tests use: 
+    - **python wikipedia_selenium.py** or, 
+    - **python travelex_selenium.py** or,
+    - **python api_calls.py**
 3. Wait for the results :)
+
+## Important notes
+The following tests _are supposed to_ fail:
+1. **wikipedia_selenium.py**
+    - test_01_check_title: 
+        -   The test is case-sensitive.
+2. **api_calls.py**
+    - test_03_check_delete: 
+        -   The call returns OK code but does not delete entry.
+    - test_03_check_no_content: 
+        -   The call returns OK code when it should return No Content code.
+        
+        
+The following tests _may_ fail:
+1. **wikipedia_selenium.py**
+    - test_04_check_result_content: 
+        -   Depending on what the wikipedia may suggest, the entry may or may not have a ToC.
