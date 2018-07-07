@@ -10,5 +10,8 @@ This project was created as an effort to exemplify selenium-based test automatio
 
 ## Running the scripts
 1. Open a cmd and type in: **cd <path_to_project>/tests**
-2. To run the tests either use: **python wikipedia_selenium.py** or: **python travelex_selenium.py**
+2. To run the tests use: 
+    - **python wikipedia_selenium.py** or, 
+    - **python travelex_selenium.py** or,
+    - **python api_calls.py**
 3. Wait for the results :)
